@@ -1,0 +1,250 @@
+/* Empty. Add your own CSS if you like */
+
+.bar-banner  {
+	background: #5586be;
+	background-image: url(../img/banner.jpg);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.bar-banner button {
+	background: #5586be;
+}
+
+.bar-banner button span {
+	visibility: collapse;
+	width: 0;
+}
+
+.bar-banner button i {
+	font-size: 25px;
+	color: white;
+}
+
+#formulario {
+    height: 90%;
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+	height: 70%;
+}
+
+.button-form-text-size {
+	font-size: 12px;
+}
+
+.width-select {
+	margin: 0 auto;
+	width: 100%;
+	height: 2em;
+}
+
+.wrap {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.input {
+	width: 85%;
+}
+
+.input .input-icon {
+	width: 15%;
+}
+
+.input .input-border-botton{
+	border-bottom: 0.11em solid #dcdcf8;
+	padding-right: 0;
+}
+
+/*------------------Botones-------------------------*/
+.flex {
+	display: flex;
+}
+
+.flex .box-botton {
+	margin-top: 1.5em;
+}
+
+.btn {
+	border: 0;
+	width: 100%;
+	background: transparent;
+	border: 0.1em solid #dcdcf8;
+	margin: 0 auto;
+	padding: 0.4em;
+	font-size: 1.3em;
+}
+
+.btn:active {
+	background: #dcdcf8;
+}
+
+.padding-left-right {
+	margin: 1em;
+}
+
+/*--------input con borde bottom-------*/
+
+.border-bottom {
+	padding: 0 15px 8px 15px;
+}
+
+.border-bottom span {
+	width: 100%;
+}
+
+.border-bottom .input-border-bottom {
+	border-bottom: 0.11em solid #dcdcf8;
+}
+
+.buttons-inline {
+	display: flex;
+	justify-content: space-around;
+}
+
+.buttons-inline a {
+	width: 50%;
+	margin: 15px;
+}
+
+.btn {
+	text-decoration: none;
+	color: black;
+	text-align: center;
+	line-height: 1.5;
+}
+
+.btn .icon {
+	margin-left: 10px;
+}
+
+.btn .icon:active {
+	margin: 0 auto;
+}
+
+.btn-siac {
+	height: 40px;
+	width: 60px;
+	padding: 1px;
+}
+
+.btn-siac img {
+	height: 100%;
+	width: 100%;
+}
+
+/*Fotos */
+
+.btn-foto {
+	display: flex;
+}
+
+.btn-foto i {
+	font-size: 35px;
+}
+
+.foto {
+	height: 100%;
+	width: 100%;
+}
+
+.foto-container {
+	position: relative;
+	border: 0.1em solid #ff8888;
+	padding: 5px;
+	margin-top: 15px;
+}
+
+.over-visible {
+	overflow: visible;
+}
+
+.close {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	right: -20px;
+	top: -20px;
+	font-size: 35px;
+	border-radius: 50%;
+	border: 0.1em solid #ff8888;
+	background: #d9d9d9;
+	color: #ff8888;
+	display: flex;
+	margin: auto;
+}
+
+.close i {
+	display: flex;
+	margin: auto;
+}
+
+.close:active {
+	background: tomato;
+	width: 30px;
+	height: 30px;
+	right: -15px;
+	top: -15px;
+	font-size: 20px;
+}
+
+/*Combobox Item template*/
+
+.item-icon {
+	margin: auto;
+	font-size: 40px;
+	color: #a2a2a2;
+}
+
+/*Alert SIAC*/
+
+.alert-siac {
+	height: 100%;
+	width: 100%;
+}
+
+.alert-mensaje {
+	background: white;
+	padding: 10px;
+	margin: 2px;
+	height: 100%;
+	word-wrap: break-word;
+	border-radius: 4px;
+	text-align: center;
+	font-size: 18px;
+	text-shadow: 5px 5px 5px #c2c2c2;
+}
+
+.btn-alert {
+	background: #c2c2c2;
+}
+
+/*css para cargar iconos de campo origen- en consulta reclamo*/
+.ion-email-oficial:before{
+content: url(../img/b_origen2.jpg);	
+}
+.ion-aplicacion-movil:before{
+content: url(../img/b_origen15.jpg);
+}
+.ion-facebook:before{
+content: url(../img/b_origen6.jpg);
+}
+.ion-twitter:before{
+content: url(../img/b_origen7.jpg);
+}
+.ion-medios-de-difusion-publica:before{
+content: url(../img/b_origen12.jpg);
+}
+.ion-telefono:before{
+content: url(../img/b_origen3.jpg);
+}
+.i icono_origen{
+	border-bottom: 0;
+}
+
+/*fin del css para cargar iconos de campo origen - en consulta reclamo*/

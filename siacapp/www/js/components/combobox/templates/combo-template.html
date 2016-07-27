@@ -1,0 +1,19 @@
+<button class="button button-block combobox-btn" ng-click="popover.show($event)">
+    <div class="content-cbx">
+        <div class="content-text">
+            <p>{{$ctrl.title}}</p>
+        </div>
+        <div class="content-img">
+            <img class="icon-img" ng-src="img/combo-icon.png">
+        </div>
+    </div>
+</button>
+<script id="combo-template.html" type="text/ng-template">
+    <ion-popover-view class="size-popover">
+        <ion-content class="back-content">
+            <combobox-item id="{{$index + item.$$hashKey}}" ng-repeat="item in $ctrl.items" item="item" ng-click="$ctrl.onSelectedItem(item, $ctrl.fieldshow, $index+item.$$hashKey)">
+                <div ng-include="$ctrl.itemtemplate"></div>
+            </combobox-item>
+        </ion-content>
+    </ion-popover-view>
+</script>

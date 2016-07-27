@@ -1,0 +1,83 @@
+<ion-view>
+     <ion-nav-bar class="bar-banner">
+        <ion-nav-back-button>
+          <i class="ion-arrow-left-c"></i>
+        </ion-nav-back-button>
+
+      </ion-nav-bar>
+    <ion-content>
+        <div class="list card">
+          <div class="flex item item-input">
+            <label  class="item-floating-label wrap input">
+              <span  class="input-label">Consultar con el N° de Reclamo:</span>
+              <input type="number" class="input-border-botton" placeholder="Consultar Reclamo: " ng-model="vm.consulta.id_reclamo" required>
+            </label>
+             <div class="input-icon">
+               <a class="button button-icon icon ion-ios-search box-botton positive" ng-click="vm.buscarReclamo()"></a>
+            </div>
+          </div>
+          
+        </div>
+          <div class="list card" ng-hide="vm.hide" class="ng-hide" >
+          
+              <div class="item item-divider positive" >
+                 <i class="icon ion-android-document" ></i>
+                 N° de reclamo: {{vm.consulta.id_reclamo}}
+              </div>
+              <div>
+                  <label class="item"   >
+                    <span class="label" >Se inicio desde : </span>
+                    <span class="item-text-wrap">{{vm.consulta.nombre_oreclamo}}</span>
+                    <span>&ensp;&ensp;&ensp;</span>
+                    <i id=icono_origen class="icon"></i>
+                  </label>
+
+                  <label class="item">
+                    <span class="label">Fecha Inicio : </span>
+                    <span class="item-text-wrap">{{vm.consulta.fecha_hora_inicio| date:"dd/MM/yyyy 'a las' h:mm:ssa"}}</span>
+                  </label>
+                  <label class="item">
+                    <span class="label">Denunciante : </span>
+                    <span class="item-text-wrap">{{vm.consulta.apellido_nombre}}</span>
+                  </label>
+                  <label class="item">
+                    <span class="label">Tipo de reclamo : </span>
+                    <span class="item-text-wrap">{{vm.consulta.nombre_treclamo}}</span>
+                  </label>
+                  <label class="item">
+                    <span class="label">Asunto : </span>
+                    <span class="item-text-wrap">{{vm.consulta.asunto}}</span>
+                  </label>
+                  <label class="item">
+                    <span class="label">Dirección : </span>
+                    <span id="direccion" class="item-text-wrap">{{vm.consulta.direccion}}</span>
+                  </label>
+          
+              </div>
+                           
+          </div>
+          
+          <label class="padding" ng-hide="vm.hide" >Mapa de San Miguel de Tucumán                
+              </label>
+              <div id="map" class="list card" ng-hide="vm.hide"></div>
+              <div id = reparticionesReceptoras class="card" ng-hide="vm.hide">
+              <div class="item item-divider text-vr">
+               Reparticiones receptoras : 
+              </div>
+              <ion-list>
+                <ion-item class="item-text-wrap" ng-repeat="item in items track by $index">
+                  {{item}}
+                </ion-item>
+              </ion-list>
+              <button class="button button-block button-positive btn-foto color-az" ng-click="vm.mostrarFotos()">
+                  <i class="ion-image"></i>
+
+                  <span>&ensp;Ver fotos</span>
+              </button>
+
+
+              </div>
+
+    </ion-content>
+
+</ion-view>

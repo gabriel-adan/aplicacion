@@ -1,0 +1,32 @@
+<ion-view>
+    <ion-nav-bar class="bar-banner">
+      <ion-nav-back-button>
+        <i class="ion-arrow-left-c"></i>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+  	<ion-content class="color-vr">
+    		<section class="color-az">
+      			<div class="item item-divider color-az">
+        				<i class="icon ion-person user-login"></i>
+        				Inicio de Sesion :
+  			    </div>
+  			    <label class="item-input item-floating-label border-bottom">
+  				      <span class="input-label">Nombre de Usuario :</span>
+  				      <input class="input-border-bottom" type="text" placeholder="Nombre de usuario" name="user_name" ng-model="vm.user.user_name" ng-minlength="5" required>
+  			    </label>
+  			    <label class="item-input item-floating-label border-bottom">
+  				      <span class="input-label">Contraseña :</span>
+  				      <input class="input-border-bottom" type="password" placeholder="Contraseña" name="password" ng-model="vm.user.password" ng-minlength="5" required>
+  			    </label>
+
+            <section class="buttons-inline">
+                <a href="" ng-click="vm.login()" class="btn">Ingresar<i class="icon ion-android-done positive"></i></a>
+                <a href="" ng-click="vm.cancel()" class="btn">Cancelar<i class="icon ion-android-close assertive"></i></a>
+            </section>
+    		</section>
+
+    		<div class="item item-text-wrap">
+            Mensaje de notificación: {{ vm.mensaje }} 
+    		</div>
+  	</ion-content>
+</ion-view>

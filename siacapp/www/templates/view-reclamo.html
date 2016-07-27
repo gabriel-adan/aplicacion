@@ -1,0 +1,105 @@
+<ion-view>
+    <ion-nav-bar class="bar-banner">
+    	<ion-nav-back-button>
+    		<i class="ion-arrow-left-c"></i>
+    	</ion-nav-back-button>
+  	</ion-nav-bar>
+  	<ion-content>
+  		<form id="formulario" name="formulario" novalidate>
+	    	<div class="list card">
+	    		<div class="item item-divider text-az">
+	    			<i class="icon ion-android-document"></i>
+				    Iniciar un nuevo reclamo :
+				</div>
+				<div class="item text-size-cbx">
+					<p>Categorias :</p>
+					<combobox id="categoria" name="categoria" ng-model="vm.categoria" items="vm.categorias" title="vm.tituloCategorias" itemtemplate="templates/item-categorias.html" selecteditem="vm.categoria" fieldshow="nombre_categoria"></combobox>
+				</div>
+				<div class="item text-size-cbx">
+					<p>Tipos de Reclamo :</p>
+					<combobox id="tipo" name="tipo" items="vm.tipos" title="vm.tituloTipos" itemtemplate="templates/item-tipos.html" selecteditem="vm.tipo" fieldshow="nombre_treclamo"></combobox>
+				</div>
+
+				<label class="item item-input item-floating-label text-size">
+					<span class="input-label">Asunto :</span>
+				    <input type="text" placeholder="Asunto (info referencial del reclamo)" name="asunto" ng-model="vm.reclamo.asunto" ng-minlength="5" required>
+				</label>
+				<div class="flex item item-input">
+					<label class="item-floating-label wrap input text-size">
+						<span class="input-label">Dirección del Lugar (Calle y Número) :</span>
+					    <input type="text" class="input-border-botton" placeholder="Dirección (puede seleccionarla del mapa)" id="direccion" name="direccion" ng-model="vm.reclamo.direccion" ng-minlength="5" ng-blur="vm.buscarDireccion()" required>
+					</label>
+                    <div class="input-icon">
+                        <a class="button button-icon icon ion-ios-search box-botton positive" ng-click="vm.buscarDireccion()"></a>
+                    </div>
+                </div>
+			</div>
+			<label class="padding">Mapa de San Miguel de Tucumán</label>
+		    <div id="map" class="list card"></div>
+			<div class="card">
+				<label class="item item-input item-floating-label text-size">
+					<span class="input-label">Descripción del Lugar :</span>
+				    <input name="descripcion_lugar" type="text" placeholder="Descripción del Lugar (es opcional)" ng-model="vm.reclamo.descripcion_lugar">
+				</label>
+				<label class="item item-input item-floating-label text-size">
+					<span class="input-label">Detalle :</span>
+				    <textarea name="detalle" placeholder="Detalles sobre el reclamo (es opcional)" ng-model="vm.reclamo.detalle"></textarea>
+				</label>
+				<div class="item text-size">
+					<p>Cargar Fotos del Lugar : </p>
+			        <div class="buttons-inline">
+			        	<button class="button positive btn-foto " ng-click="vm.getPhotos()">
+			            <i class="ion-ios-plus-outline"></i>
+			            	Seleccionar</button>
+			            <button class="button btn-siac" ng-click="vm.tomarFoto()">
+			            	<img src="img/b_foto.jpg">
+			            </button>
+			        </div>
+			        
+			        <ion-list>
+				        <ion-item ng-repeat="src in vm.srcs track by $index" class="over-visible">
+				        	<div class="foto-container">
+				        		<a class="close" ng-click="vm.eliminar($index)">
+				        			<i class="icon ion-android-close"></i>
+				        		</a>
+				        		<img class="foto" src="{{src}}">
+				        	</div>
+				        </ion-item>
+				    </ion-list>
+		        </div>
+			</div>
+			<div class="card">
+				<div class="item item-divider text-vr">
+					<i class="icon ion-person"></i>
+				    Datos del Ciudadano :
+				</div>
+				<label class="item item-input item-floating-label text-size">
+					<span class="input-label">Apellidos y Nombres :</span>
+				    <input type="text" placeholder="Apellidos y Nombres" name="nombres" ng-model="vm.reclamo.apellido_nombre" ng-minlength="5" required>
+				</label>
+				<label class="item item-input item-floating-label text-size">
+					<span class="input-label">Teléfono :</span>
+				    <input type="tel" name="telefono" placeholder="Teléfono (es opcional)" ng-model="vm.reclamo.telefono" ng-minlength="7" ng-maxlength="12" maxlength="12">
+				</label>
+				<label class="item item-input item-floating-label text-size">
+					<span class="input-label">E-mail :</span>
+				    <input type="email" placeholder="E-mail" name="email" ng-model="vm.reclamo.email" required>
+				</label>
+			</div>
+			
+			<div class="flex padding-left-right card">
+                <button class="btn" ng-disabled="formulario.$invalid" ng-click="vm.enviar()">
+                    Enviar
+                    <i class="icon ion-android-done" ng-class="{ 'stable': formulario.$invalid, 'positive': !formulario.$invalid }"></i>
+                </button>
+                <button class="btn" ng-click="vm.reset()">
+                    Cancelar
+                    <i class="icon ion-android-close assertive"></i>
+                </button>
+            </div>
+            <div class="bar color-az footer-bar">
+				
+			</div>
+		</form>
+  	</ion-content>
+</ion-view>
